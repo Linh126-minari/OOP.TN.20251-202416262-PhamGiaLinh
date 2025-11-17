@@ -8,8 +8,7 @@ public class DigitalVideoDisc {
 	private double cost;
 	private static int nbDigitalVideoDiscs = 0;
 	private String id;
-	
-	
+
 	public DigitalVideoDisc(String title) {
 		this.title=title;
 	}
@@ -21,12 +20,14 @@ public class DigitalVideoDisc {
 	public DigitalVideoDisc(String title, String category,String director, double cost) {
 		this(title,category,cost);
 		this.director=director;
-	
+
 	}
 	public DigitalVideoDisc(String title, String category,String director, int length, double cost) {
 		this(title,category,director,cost);
 		this.length=length;
-		this.nbDigitalVideoDiscs = DigitalVideoDisc.generateId();
+		this.id = DigitalVideoDisc.generateId();
+		this.id = DigitalVideoDisc.generateId();
+
 	}
 	private static String generateId() {
 		String id = String.format("%02d",nbDigitalVideoDiscs +1);
@@ -51,4 +52,15 @@ public class DigitalVideoDisc {
 	public String getId() {
 		return id;
 	}
+
+	@Override
+	public String toString() {
+		return "DVD" + "[" + this.id + "]"
+				+ "[" + this.title + "]"
+				+ "[" + this.cost + "]"
+				+ "[" + this.director + "]"
+				+ "[" + this.length + "]"
+				+ "[" + this.category + "]";
+	}
+
 }
