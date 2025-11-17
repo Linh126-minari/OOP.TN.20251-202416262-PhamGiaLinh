@@ -26,7 +26,6 @@ public class DigitalVideoDisc {
 		this(title,category,director,cost);
 		this.length=length;
 		this.id = DigitalVideoDisc.generateId();
-		this.id = DigitalVideoDisc.generateId();
 
 	}
 	private static String generateId() {
