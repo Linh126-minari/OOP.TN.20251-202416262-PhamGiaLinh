@@ -2,7 +2,7 @@ package com.hust.kstn.models;
 
 
 
-public class CompactDisc extends Media {
+public class CompactDisc extends Disc {
 	private String[] artists;
 	private String[] directors;
 	private Track[] tracks = new Track[20];
