@@ -2,28 +2,15 @@ package com.hust.kstn.models;
 
 
 
-public class CompactDisc {
-	private String id;
-	private static int nbCompactDiscs =0;
-	private String title;
-	private String category;
-	private double cost;
+public class CompactDisc extends Media {
 	private String[] artists;
 	private String[] directors;
 	private Track[] tracks = new Track[20];
 	private int trackCount =0;
 
-	private static String generateId() {
-		String id = String.format("%02d",nbCompactDiscs +1);
-		nbCompactDiscs ++;
-		return id;
-	}
 	
-	public CompactDisc(String title, String category, double cost, String[] artists, String[] directors) {
-		this.id = CompactDisc.generateId();
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
+	public CompactDisc(String title, String category, double cost, String[] artists, String[] directors,Track[] tracks) {
+		super(title,cost,category);
 		this.artists = new String[artists.length];
 		for(int i=0;i<artists.length;i++) {
 			this.artists[i] = artists[i];
@@ -32,10 +19,6 @@ public class CompactDisc {
 		for(int i=0;i< directors.length;i++) {
 			this.directors[i] = directors[i];
 		}
-	}
-	
-	public CompactDisc(String title, String category, double cost, String[] artists, String[] directors,Track[] tracks) {
-		this(title,category,cost,artists,directors);
 		for (int i = 0; i < tracks.length; i++) 
             if (tracks[i] != null) {
                 this.tracks[i] = tracks[i];
@@ -43,21 +26,6 @@ public class CompactDisc {
             }
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public double getCost() {
-		return cost;
-	}
 
 	public String[] getArtists() {
 		return artists;
@@ -115,10 +83,7 @@ public class CompactDisc {
 		if(trackCount == 0) {
 			return "The CD is empty";
 		}
-		String result = "CD" + "[" + this.id + "]"
-				+ "[" + this.title + "]"
-				+ "[" + this.category + "]"
-				+ "[" + this.cost + "]\n";
+		String result = "CD" + super.toString()+"\n";
 		result += "Artists: ";
         for (int i = 0; i < artists.length; i++) {
             result += artists[i];
