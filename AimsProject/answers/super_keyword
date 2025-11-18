@@ -1,0 +1,3 @@
+Từ khóa super trong hàm khởi tạo của lớp Book được dùng để gọi đến hàm khởi tạo của lớp cha Media, tương tự
+cho các lớp khác như DigitalVideoDisc, CompactDisc. super(...) phải được gọi đầu tiên bên trong hàm khởi tạo
+của các lớp con
