@@ -1,0 +1,3 @@
+Khi thêm phương thức addDVD(DigitalVideoDisc ...discs) thì chương trình sẽ báo lỗi tại thời điểm biên dịch 
+do cả 2 phương thức addDVD(DigitalVideoDisc[] discs) và addDVD(DigitalVideoDisc ...discs) đều nhận vào 1 
+mảng (vi phạm quy tắc nạp chồng phươn thức). Do đó ta chỉ được sử dụng 1 trong 2 phương thức.
