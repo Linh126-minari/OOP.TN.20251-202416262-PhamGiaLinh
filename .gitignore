@@ -1,0 +1,10 @@
+# Java build
+bin/
+
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+
